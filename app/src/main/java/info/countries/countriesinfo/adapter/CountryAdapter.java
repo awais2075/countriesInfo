@@ -35,7 +35,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.MyHolder
 
     @Override
     public MyHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new MyHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout._item_country, parent, false));
+        return new MyHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.item_country, parent, false));
     }
 
     @Override

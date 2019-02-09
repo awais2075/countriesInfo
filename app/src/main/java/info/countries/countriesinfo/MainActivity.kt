@@ -17,6 +17,7 @@ import android.app.SearchManager
 import android.content.Intent
 import android.support.v7.widget.SearchView
 import info.countries.countriesinfo.activity.CountryDetailActivity
+import info.countries.countriesinfo.model.CountryDetail
 
 
 class MainActivity : AppCompatActivity(), ItemClickListener<Country>, SearchView.OnQueryTextListener {
@@ -52,8 +53,10 @@ class MainActivity : AppCompatActivity(), ItemClickListener<Country>, SearchView
 
 
     override fun itemClicked(country: Country) {
-        Toast.makeText(this, country.name, Toast.LENGTH_SHORT).show()
         startActivity(Intent(this, CountryDetailActivity::class.java))
+
+        val countryDetail = CountryDetail(name = country.name, demonym = country.demonym, topLevelDomain = country.topLevelDomain, callingCode = country.callingCodes, capital = country.capital, region = country.region, population = country.population, latLng = country.latlng, area = country.area, timeZone = country.timezones, borders = country.borders, currencies = country.currencies, languages = country.languages,flag = country.flag)
+        Toast.makeText(this, "${countryDetail.borders}",Toast.LENGTH_SHORT).show()
 
     }
 
