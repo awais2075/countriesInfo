@@ -17,6 +17,7 @@ import info.countries.countriesinfo.model.Country;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.MyHolder> implements Filterable {
 
@@ -108,6 +109,7 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.MyHolder
         void bind(Country country) {
             String alpha2Code = country.getAlpha2Code().toLowerCase();
             String imageUrl = "https://www.countryflags.io/" + alpha2Code + "/shiny/64.png";
+
 
             Glide.with(context)
                     .load(imageUrl)
